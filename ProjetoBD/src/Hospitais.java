@@ -62,8 +62,9 @@ public class Hospitais {
 		return "Hospitais [nomehosp=" + nomehosp + ", cappac=" + cappac + ", nmedico=" + nmedico + ", diretorgeral="
 				+ diretorgeral + ", coorgeral=" + coorgeral + ", ficha=" + ficha + "]";
 	}
+
 	
-	
+	 
 	
 
 	
