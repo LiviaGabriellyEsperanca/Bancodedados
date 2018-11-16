@@ -32,6 +32,14 @@ public class Endereco {
 	public String toString() {
 		return "Endereco [cidade=" + cidade + ", rua=" + rua + ", numero=" + numero + "]";
 	}
+
+	
+	public Endereco(String cidade, String rua, int numero) {
+		super();
+		this.cidade = cidade;
+		this.rua = rua;
+		this.numero = numero;
+	}
 	
 	
 

@@ -1,6 +1,12 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Fichamento {
 	
+	@Id
 	public String diaginosticos;
+	
 	public String exames;
 	public Cidadao pessoa;
 	
@@ -32,6 +38,14 @@ public class Fichamento {
 	public String toString() {
 		return "Fichamento [diaginosticos=" + diaginosticos + ", exames=" + exames + ", pessoa=" + pessoa + "]";
 	}
+
+	public Fichamento(String diaginosticos, String exames, Cidadao pessoa) {
+		super();
+		this.diaginosticos = diaginosticos;
+		this.exames = exames;
+		this.pessoa = pessoa;
+	}
+	
 	
 	
 	

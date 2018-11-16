@@ -1,7 +1,14 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Unidade_de_saude {
 	
 	public int anodeabertura;
+	
+	@Id
 	public String nomeposto;
+	
 	public Endereco endereco;
 	
 	public int getAnodeabertura() {
@@ -32,6 +39,13 @@ public class Unidade_de_saude {
 	public String toString() {
 		return "Unidade_de_saude [anodeabertura=" + anodeabertura + ", nomeposto=" + nomeposto + ", endereco="
 				+ endereco + "]";
+	}
+
+	public Unidade_de_saude(int anodeabertura, String nomeposto, Endereco endereco) {
+		super();
+		this.anodeabertura = anodeabertura;
+		this.nomeposto = nomeposto;
+		this.endereco = endereco;
 	}
 
 	

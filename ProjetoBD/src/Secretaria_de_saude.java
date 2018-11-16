@@ -1,9 +1,17 @@
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Secretaria_de_saude {
 	
 	public Endereco endereco;
+	
+	@Id
 	public String coordenador;
+	
 	public String nfuncionarios;
 	public ArrayList<Hospitais> hospital;
 	public ArrayList<Unidade_de_saude> ubs;
@@ -53,7 +61,16 @@ public class Secretaria_de_saude {
 		return "Secretaria_de_saude [endereco=" + endereco + ", coordenador=" + coordenador + ", nfuncionarios="
 				+ nfuncionarios + ", hospital=" + hospital + ", ubs=" + ubs + "]";
 	}
-	
+
+	public Secretaria_de_saude(Endereco endereco, String coordenador, String nfuncionarios,
+			ArrayList<Hospitais> hospital, ArrayList<Unidade_de_saude> ubs) {
+		super();
+		this.endereco = endereco;
+		this.coordenador = coordenador;
+		this.nfuncionarios = nfuncionarios;
+		this.hospital = hospital;
+		this.ubs = ubs;
+	}
 	
 
 }

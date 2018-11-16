@@ -1,12 +1,22 @@
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+
 public class Cidadao {
+	
 	
 	public String nome;
 	public Endereco endereco;
+	
+	@Id
 	public int cpf;
+	
 	public int telefone;
 	public String email;
 	public int nsus;
 	public int nascimento;
+	
 	
 	public String getNome() {
 		return nome;
@@ -64,6 +74,7 @@ public class Cidadao {
 		this.nascimento = nascimento;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Cidadao [nome=" + nome + ", endereco=" + endereco + ", cpf=" + cpf + ", telefone=" + telefone
@@ -71,6 +82,18 @@ public class Cidadao {
 	}
 	
 	
+
+	public Cidadao(String nome, Endereco endereco, int cpf, int telefone, String email, int nsus, int nascimento) {
+		super();
+		this.nome = nome;
+		this.endereco = endereco;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.email = email;
+		this.nsus = nsus;
+		this.nascimento = nascimento;
+	}
+
 
 	
 }

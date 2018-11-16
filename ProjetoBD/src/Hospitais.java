@@ -1,11 +1,19 @@
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+
+@Entity
 public class Hospitais {
 
 	public String nomehosp;
 	public int cappac;
 	public int nmedico;
+	
+	@Id
 	public String diretorgeral;
+	
 	public String coorgeral;
 	public ArrayList<Fichamento> ficha;
 	
@@ -63,9 +71,16 @@ public class Hospitais {
 				+ diretorgeral + ", coorgeral=" + coorgeral + ", ficha=" + ficha + "]";
 	}
 
-	
-	 
-	
+	public Hospitais(String nomehosp, int cappac, int nmedico, String diretorgeral, String coorgeral,
+			ArrayList<Fichamento> ficha) {
+		super();
+		this.nomehosp = nomehosp;
+		this.cappac = cappac;
+		this.nmedico = nmedico;
+		this.diretorgeral = diretorgeral;
+		this.coorgeral = coorgeral;
+		this.ficha = ficha;
+	}
 
 	
 }
