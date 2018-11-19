@@ -1,5 +1,11 @@
+
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 
@@ -15,7 +21,13 @@ public class Cidadao {
 	public int telefone;
 	public String email;
 	public int nsus;
-	public int nascimento;
+	
+	@Temporal(TemporalType.DATE)
+	public Calendar nascimento;
+    
+	@OneToOne
+	public Fichamento ficha;
+
 	
 	
 	public String getNome() {
@@ -66,15 +78,15 @@ public class Cidadao {
 		this.nsus = nsus;
 	}
 	
-	public int getNascimento() {
+	
+	public Calendar getNascimento() {
 		return nascimento;
 	}
-	
-	public void setNascimento(int nascimento) {
+
+	public void setNascimento(Calendar nascimento) {
 		this.nascimento = nascimento;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "Cidadao [nome=" + nome + ", endereco=" + endereco + ", cpf=" + cpf + ", telefone=" + telefone
@@ -83,7 +95,7 @@ public class Cidadao {
 	
 	
 
-	public Cidadao(String nome, Endereco endereco, int cpf, int telefone, String email, int nsus, int nascimento) {
+	public Cidadao(String nome, Endereco endereco, int cpf, int telefone, String email, int nsus, Calendar nascimento) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
@@ -92,6 +104,11 @@ public class Cidadao {
 		this.email = email;
 		this.nsus = nsus;
 		this.nascimento = nascimento;
+	}
+
+	public Cidadao() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 

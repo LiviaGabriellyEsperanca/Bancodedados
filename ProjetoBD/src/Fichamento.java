@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Fichamento {
@@ -9,7 +13,10 @@ public class Fichamento {
 	
 	public String exames;
 	public Cidadao pessoa;
+
 	
+	
+
 	public String getDiaginosticos() {
 		return diaginosticos;
 	}

@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
 
 
 @Entity
@@ -15,8 +18,9 @@ public class Hospitais {
 	public String diretorgeral;
 	
 	public String coorgeral;
-	public ArrayList<Fichamento> ficha;
 	
+
+
 	public String getNomehosp() {
 		return nomehosp;
 	}

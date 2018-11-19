@@ -1,5 +1,7 @@
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Unidade_de_saude {
@@ -11,6 +13,11 @@ public class Unidade_de_saude {
 	
 	public Endereco endereco;
 	
+	
+	
+	
+
+
 	public int getAnodeabertura() {
 		return anodeabertura;
 	}

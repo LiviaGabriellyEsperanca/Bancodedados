@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -13,8 +14,9 @@ public class Secretaria_de_saude {
 	public String coordenador;
 	
 	public String nfuncionarios;
-	public ArrayList<Hospitais> hospital;
-	public ArrayList<Unidade_de_saude> ubs;
+	
+	
+	
 	
 	public Endereco getEndereco() {
 		return endereco;
@@ -40,21 +42,6 @@ public class Secretaria_de_saude {
 		this.nfuncionarios = nfuncionarios;
 	}
 	
-	public ArrayList<Hospitais> getHospital() {
-		return hospital;
-	}
-	
-	public void setHospital(ArrayList<Hospitais> hospital) {
-		this.hospital = hospital;
-	}
-	
-	public ArrayList<Unidade_de_saude> getUbs() {
-		return ubs;
-	}
-	
-	public void setUbs(ArrayList<Unidade_de_saude> ubs) {
-		this.ubs = ubs;
-	}
 
 	@Override
 	public String toString() {
