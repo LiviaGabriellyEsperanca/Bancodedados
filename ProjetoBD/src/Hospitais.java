@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
@@ -17,6 +18,13 @@ public class Hospitais {
 	@Id
 	public String diretorgeral;
 	
+	@ManyToMany
+	@JoinColumn (name= "diretorgeral")
+	public ArrayList<Fichamento> ficha;
+	
+	public Secretaria_de_saude secretaria;
+
+
 	public String coorgeral;
 	
 

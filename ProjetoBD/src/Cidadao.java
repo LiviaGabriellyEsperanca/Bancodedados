@@ -17,6 +17,9 @@ public class Cidadao {
 	
 	@Id
 	public int cpf;
+	@OneToOne
+	public Fichamento ficha;
+ 
 	
 	public int telefone;
 	public String email;
@@ -24,10 +27,7 @@ public class Cidadao {
 	
 	@Temporal(TemporalType.DATE)
 	public Calendar nascimento;
-    
-	@OneToOne
-	public Fichamento ficha;
-
+     
 	
 	
 	public String getNome() {

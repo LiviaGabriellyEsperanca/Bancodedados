@@ -2,27 +2,34 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+
 
 @Entity
 public class Fichamento {
 	
 	@Id
-	public String diaginosticos;
+	public int id;
+	@ManyToMany
+	@JoinColumn (name= "id")
+	public ArrayList<Hospitais> hospitais;
+	
+	@ManyToMany
+	@JoinColumn (name= "id")
+	public ArrayList<Diaginostico> diaginost;
 	
 	public String exames;
 	public Cidadao pessoa;
 
 	
-	
 
-	public String getDiaginosticos() {
-		return diaginosticos;
+	public int getId() {
+		return id;
 	}
 	
-	public void setDiaginosticos(String diaginosticos) {
-		this.diaginosticos = diaginosticos;
+	public void setDiaginosticos(int id) {
+		this.id = id;
 	}
 	
 	public String getExames() {
@@ -43,12 +50,11 @@ public class Fichamento {
 
 	@Override
 	public String toString() {
-		return "Fichamento [diaginosticos=" + diaginosticos + ", exames=" + exames + ", pessoa=" + pessoa + "]";
+		return "Fichamento [ exames=" + exames + ", pessoa=" + pessoa + "]";
 	}
 
 	public Fichamento(String diaginosticos, String exames, Cidadao pessoa) {
 		super();
-		this.diaginosticos = diaginosticos;
 		this.exames = exames;
 		this.pessoa = pessoa;
 	}

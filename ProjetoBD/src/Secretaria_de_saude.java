@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
@@ -12,6 +14,15 @@ public class Secretaria_de_saude {
 	
 	@Id
 	public String coordenador;
+	
+	@OneToMany
+	@JoinColumn(name="coordenador")
+	public Hospitais hospital;
+	
+	@OneToMany
+	@JoinColumn(name = "coordenador")
+	public Unidade_de_saude UDS;
+	
 	
 	public String nfuncionarios;
 	
@@ -46,7 +57,7 @@ public class Secretaria_de_saude {
 	@Override
 	public String toString() {
 		return "Secretaria_de_saude [endereco=" + endereco + ", coordenador=" + coordenador + ", nfuncionarios="
-				+ nfuncionarios + ", hospital=" + hospital + ", ubs=" + ubs + "]";
+				+ nfuncionarios + " ]";
 	}
 
 	public Secretaria_de_saude(Endereco endereco, String coordenador, String nfuncionarios,
@@ -55,8 +66,7 @@ public class Secretaria_de_saude {
 		this.endereco = endereco;
 		this.coordenador = coordenador;
 		this.nfuncionarios = nfuncionarios;
-		this.hospital = hospital;
-		this.ubs = ubs;
+		
 	}
 	
 
