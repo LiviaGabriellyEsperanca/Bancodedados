@@ -1,10 +1,5 @@
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 
@@ -17,13 +12,6 @@ public class Doenca {
 	private  int id;
 	
 	private  String doenca;
-	
-	@ManyToMany
-	@JoinTable(
-			name = "cidadao_ficha", 
-			joinColumns = @JoinColumn(name = "id_doenca"), 
-			inverseJoinColumns = @JoinColumn(name = "id_cidadao"))
-	private Set<Cidadao> pessoa;
 	
 
 	
@@ -44,12 +32,10 @@ public class Doenca {
 	}
 
 	
-	
+
 	@Override
 	public String toString() {
-		return "Doenca [id=" + id + ", doenca=" + doenca + ", pessoa=" + pessoa + ", getId()=" + getId()
-				+ ", getDoenca()=" + getDoenca() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
-				+ ", toString()=" + super.toString() + "]";
+		return "Doenca [id=" + id + ", doenca=" + doenca + "]";
 	}
 
 	@Override
