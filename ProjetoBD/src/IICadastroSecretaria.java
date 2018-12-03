@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-
+ 
 public interface IICadastroSecretaria {
 	
 	/**Unidade de saude
@@ -25,20 +24,9 @@ public interface IICadastroSecretaria {
 	 * @return
 	 */
 	
-	public Hospitais addhospitais(String nomehosp, int cappac, int nmedico, String diretorgeral,String coorgeral, ArrayList<Fichamento> ficha);
+	public Hospitais addhospitais(String nomehosp, int cappac);
 	
 	public void removehospitais(String diretorgeral);
 	
-	/**Fichamento
-	 * 
-	 * @param diaginosticos
-	 * @param exames
-	 * @param pessoa
-	 * @return
-	 */
-	
-	public Fichamento addfichamento(String diaginosticos, String exames, Cidadao pessoa);
-	
-	public void removefichamento(String diaginosticos);
 	
 }

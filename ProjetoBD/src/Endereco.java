@@ -1,8 +1,8 @@
 public class Endereco {
 	
-	public String cidade;
-	public String rua;
-	public int numero;
+	private  String cidade;
+	private  String rua;
+	private int numero;
 	
 	public String getCidade() {
 		return cidade;

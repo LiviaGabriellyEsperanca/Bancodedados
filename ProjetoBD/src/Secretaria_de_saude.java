@@ -1,30 +1,31 @@
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 
 @Entity
 public class Secretaria_de_saude {
 	
-	public Endereco endereco;
+	private Endereco endereco;
 	
 	@Id
-	public String coordenador;
+	@Column(name = "id_coord")
+	private String coordenador;
 	
 	@OneToMany
-	@JoinColumn(name="coordenador")
-	public Hospitais hospital;
+	@JoinColumn(name="id_hosp")
+	private Hospitais hospital;
 	
 	@OneToMany
-	@JoinColumn(name = "coordenador")
-	public Unidade_de_saude UDS;
+	@JoinColumn(name = "id_USB")
+	private Unidade_de_saude UDS;
 	
 	
-	public String nfuncionarios;
+	private String nfuncionarios;
 	
 	
 	

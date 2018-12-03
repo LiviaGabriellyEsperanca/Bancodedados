@@ -1,31 +1,24 @@
-import java.util.ArrayList;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table (name ="hospital")
 public class Hospitais {
 
-	public String nomehosp;
-	public int cappac;
-	public int nmedico;
+	private String nomehosp;
+	private int cappac;
+	private int nmedico;
 	
 	@Id
-	public String diretorgeral;
+	@Column(name = "id_hosp")
+	private Long id;
 	
-	@ManyToMany
-	@JoinColumn (name= "diretorgeral")
-	public ArrayList<Fichamento> ficha;
-	
-	public Secretaria_de_saude secretaria;
-
-
-	public String coorgeral;
+	private String diretorgeral;
+	private String coorgeral;
 	
 
 
@@ -68,31 +61,14 @@ public class Hospitais {
 	public void setCoorgeral(String coorgeral) {
 		this.coorgeral = coorgeral;
 	}
-	
-	public ArrayList<Fichamento> getFicha() {
-		return ficha;
-	}
-	
-	public void setFicha(ArrayList<Fichamento> ficha) {
-		this.ficha = ficha;
-	}
+
 
 	@Override
 	public String toString() {
 		return "Hospitais [nomehosp=" + nomehosp + ", cappac=" + cappac + ", nmedico=" + nmedico + ", diretorgeral="
-				+ diretorgeral + ", coorgeral=" + coorgeral + ", ficha=" + ficha + "]";
+				+ diretorgeral + ", coorgeral=" + coorgeral + "]";
 	}
 
-	public Hospitais(String nomehosp, int cappac, int nmedico, String diretorgeral, String coorgeral,
-			ArrayList<Fichamento> ficha) {
-		super();
-		this.nomehosp = nomehosp;
-		this.cappac = cappac;
-		this.nmedico = nmedico;
-		this.diretorgeral = diretorgeral;
-		this.coorgeral = coorgeral;
-		this.ficha = ficha;
-	}
 
 	
 }
