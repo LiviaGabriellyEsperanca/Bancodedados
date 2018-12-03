@@ -39,7 +39,7 @@ public class Fichamento {
 
 	public void setDoenca(Doenca doenca) {
 		this.doenca = doenca;
-	}
+	} 
 
 
 	public Date getData() {

@@ -142,7 +142,7 @@ public class Cidadao {
 				+ "]";
 	}
 
-	public Cidadao(String nome, Endereco endereco, Long cpf, int telefone, String email, int nsus, Calendar nascimento) {
+	public Cidadao() {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
